@@ -1,0 +1,37 @@
+/*
+animation copied from 
+https://stackoverflow.com/questions/38772442/css-transition-from-display-none-to-display-block-navigation-with-subnav
+	<!--[if lt IE 9]>
+  <h1 style="text-align: center;">Your browser is not supported.<br/>Please contact your local IT to upgrade to IE 9 &amp; above.</h1>
+	<![endif]-->
+	<!--[if gt IE 8]> all IE above 9-->
+*/
+
+
+input:hover + span, textarea:hover + span {
+	visibility: visible;
+	opacity: 1;
+	transition: opacity 1ms 1.5s, visibility 1ms 1.5s;
+}
+span {
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 1ms 0s, visibility 1ms 0s;
+}
+
+/*
+.hidecopy {
+	position: fixed;
+	top: 0px;
+	cursor: pointer;
+	background: #fff;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 1ms 1s, visibility 1ms 1s;
+}
+
+.showcopy {
+	visibility: visible;
+	opacity: 1;
+	transition: opacity 1ms 0s, visibility 1ms 0s;
+}

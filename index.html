@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- force IE edge -->
+		<link rel="stylesheet" href="css/design.css">
+		<link rel="stylesheet" href="css/animation.css">
+		<title>OLV - Logger (unofficial)</title>
+	</head>
+	<body>
+	<!--[if lt IE 9]>
+		<h1>Your browser is not supported. Please update to IE 11 and above.</h1>
+	<![endif]-->
+	<!--[if gt IE 8]>-->	
+		<div class="div-container username">
+			<h1>
+				<script>
+				try {
+					var WinNetwork = new ActiveXObject("WScript.Network");
+					var agent_ntlogin = {
+						'flle0695' : 'Francis_Ben_Lleve',
+						'pdel9895' : 'Philip_Dela_Cruz',
+					};
+					
+					var greeting = [ "Hi there", "What's up", "How's it going", "Annyeonghaseyo", "Maayong adlaw sa imo", "Ni hao", "Konichiwa" ];
+					
+					function getRandomInt(min, max) {
+						min = Math.ceil(min);
+						max = Math.floor(max);
+						return Math.floor(Math.random() * (max - min)) + min;
+						//code copied from mdn
+					}
+					
+					document.write(greeting[ getRandomInt(0, greeting.length) ] + ",<br>" + agent_ntlogin[WinNetwork.UserName].slice(0, agent_ntlogin[WinNetwork.UserName].indexOf('_')) + "!");
+				} catch (e) {
+					document.write("Error. Pls inform bEn!");
+					console.log(e.message);
+				}
+				</script>
+			</h1>
+			<button id="btn-continue">continue</button>
+		</div>
+		<div class="div-main-container">
+			<div class="div-container cxinfots1">
+				<div class="div-row">
+					<input type="text" id="txt-firstname" placeholder="first name">
+					<span class="span_topleft"></span>
+					<label>first name</label>
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-lastname" placeholder="last name">
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-servicetag" placeholder="service tag">
+					<span class="span_topleft">			
+					</span>
+				</div>
+				<div id="dellsupport" class="div-row">
+					<a href="#" id="lbl-dellsupport">check tag on dell support</a>
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-phonenumber" placeholder="phone number">
+					<span class="span_topleft">
+					</span>
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-emailaddress" placeholder="email address">
+					<span class="span_topleft">
+					</span>					
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-stamps" placeholder="stamps">
+					<span class="span_topleft">
+					</span>
+				</div>			
+				<div class="div-row">
+					<input type="text" id="txt-heatcheckts" placeholder="heatcheck b4 ts">
+					<span class="span_topleft">
+					</span>
+				</div>			
+				<div class="div-row">
+					<input type="text" id="txt-issue" placeholder="issue">
+					<span class="span_topleft">
+					</span>
+				</div>
+				<div class="div-row">
+					<textarea id="txt-troubleshooting" placeholder="troubleshooting"></textarea>
+					<span class="span_topleft">				
+					</span>					
+				</div>
+				<div class="div-row">
+					<textarea id="txt-answerflow" placeholder="**paste answerflow here**"></textarea>
+				</div>			
+				<div class="div-row">
+					<input type="text" id="txt-resolution" placeholder="resolution">
+					<span class="span_bottomleft"></span>
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-alternatefirstname" placeholder="alt first name">
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-alternatelastname" placeholder="alt last name">
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-alternatephonenumber" placeholder="alt phone #">
+				</div>			
+				<div class="div-row">
+					<input type="text" id="txt-physicaladdress1" placeholder="street address">
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-physicaladdress2" placeholder="po box / building number">
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-city" placeholder="city">
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-state" placeholder="state">
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-zip" placeholder="zip">
+				</div>
+				<div id="google" class="div-row">
+					<a href="#" id="a-google">check address in google</a>
+				</div>
+			</div>
+			<div class="div-container cxinfots2">
+				<div class="div-row">
+					<input type="text" id="txt-vkprs" placeholder="vkprs (portable only)">
+					<span class="span_topright"></span>
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-canadahdd" placeholder="canada hdd dps">
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-hdddataloss" placeholder="hdd data loss">
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-ppid" placeholder="ppid">
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-whatdamage" placeholder="what is the extent of damage">
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-whenhowdamage" placeholder="when &amp; how did the damage occur">
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-wheredamage" placeholder="where was the system at time of incident">
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-adperyear" placeholder="one AD per year">
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-bttr" placeholder="bttr &amp; timezone">
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-cidar" placeholder="cidar expectations">
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-frucru" placeholder="fru to cru disclaimer">
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-crufru" placeholder="cru to fru disclaimer">
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-oracleslnid" placeholder="oracle sln id">
+					<span class="span_bottomright"></span>
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-diagnostics" placeholder="diagnostics">
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-diagresults" placeholder="diag resultsvalidation">
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-validation" placeholder="validation">
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-reasonnotrun" placeholder="reason if not run">
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-l2approver" placeholder="L2 approver">
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-callduration" placeholder="call duration">
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-heatcheckrating" placeholder="heat check rating">
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-heatcheckreason" placeholder="heat check reason">
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-smartid" placeholder="smart id method">
+				</div>
+				<div class="div-row">
+					<input type="text" id="txt-offereddepot" placeholder="offered depot">
+				</div>
+			</div>
+			<div class="div-container buttons">
+				<div class="div-row">
+					<button id="btn-previewlog">preview log</button>
+					<button id="btn-previewemail">preview email</button>
+					<button id="btn-scripts">scripts</button>
+					<button id="btn-clearall">clear all</button>					
+				</div>
+			</div>
+			<div class="div-container internalpublic">
+				<div class="div-row">
+					<label>internal notes</label>
+					<textarea id="txt-internal"></textarea>
+					<button id="btn-copy">copy internal</button>
+				</div>
+				<div class="div-row">
+					<label>public notes</label>
+					<textarea id="txt-public"></textarea>
+					<button id="btn-public">copy public</button>
+				</div>
+			</div>
+			<div class="div-container emailtemplateselection">
+				<div class="div-row">
+					<h2>choose template below</h2>
+				</div>
+				<div class="div-row">
+					<button id="btn-backtologger">back 2 logger</button>
+					<button id="btn-template1">template1</button>
+					<button id="btn-template2">template2</button>
+					<button id="btn-template3">template3</button>
+				</div>
+			</div>
+			<div class="div-container emailpreview">
+				<div class="div-row">
+					<button>back to templates</button>
+				</div>
+				<div class="div-row">
+					<textarea id="txt-emailpreview"></textarea>
+				</div>
+				<div class="div-row">
+					<button id="btn-emailcopy">Copy</button>
+					<button id="btn-emailclear">Clear</button>
+					<button id="btn-emailclose">Close</button>				
+				</div>
+			</div>
+		</div><!-- end of div-main-container -->
+		<script type="text/javascript">
+			window.onload = function() {
+				var span = document.getElementsByTagName('span');
+				var inputElement = document.getElementsByTagName('input');
+				var textareaElement = document.getElementsByTagName('textarea');				
+				
+				var firstnametext = "OPENING SCRIPT<br>" +
+					"Welcome to Dell Basic Warranty Support. My name is _____. How may I help you today?<br><br>" +
+					"ISSUE RESTATEMENT<br>" +
+					"I understand that your issue or concern is about [ISSUE]... Is that correct?<br><br>" +
+					"ACCOUNTABILITY<br>" +
+					"I'll be more than happy to help you with that issue/concern. Before we proceed, I will ask questions that will help us update your record.<br><br>" +
+					"GATHER NAME<br>" +
+					"To begin with, may I have your First and Last Name please?";
+				
+				for (var x = 0; x < span.length;x++) {
+					if (span[x].id === "span-dellsupport") {					
+						span[x].addEventListener('click', function() {						
+							window.open( 'http://www.dell.com/support/home/us/en/19/product-support/servicetag/' + document.getElementById('txt-servicetag').value );
+						}, false);
+					}
+				}
+				
+				document.getElementById('txt-servicetag').onkeyup = function () {
+					if (this.value.length >= 7 && this.value !== "service tag") { document.getElementById('dellsupport').style.display = "block"; }
+					else { document.getElementById('dellsupport').style.display = "none"; }
+					console.log(this.value.length);
+				};
+				
+				document.getElementById('txt-zip').onkeyup = function () {
+					if ( document.getElementById('txt-physicaladdress1').value !== "" && document.getElementById('txt-city').value !== "" && document.getElementById('txt-state').value !== "" && document.getElementById('txt-zip').value !== "" ) {
+						document.getElementById('google').style.display = "block";
+						document.getElementById('google').onclick = function () {
+							window.open( 'https://www.google.com/search?q=' + document.getElementById('txt-physicaladdress1').value + '+' + document.getElementById('txt-physicaladdress2').value + '+' + document.getElementById('txt-city').value + '+' + document.getElementById('txt-state').value + '+' + document.getElementById('txt-zip').value );
+						}
+					} else {
+						document.getElementById('google').style.display = "none";
+					}
+				};
+				
+				for (var i = 0;i < inputElement.length;i++) {
+					document.getElementById(inputElement[i].id).onkeydown = function() {
+						var nxt = document.getElementById(this.id).nextElementSibling.nextElementSibling;
+						if (this.value.length <= 14) {
+							nxt.style.visibility = 'visible';
+						} else {
+							nxt.style.visibility = 'hidden';
+						}
+					};
+
+					if ( document.getElementById(inputElement[i].id).nextElementSibling ) {
+						if ( document.getElementById(inputElement[i].id).nextElementSibling.nodeName === "SPAN" ) {
+							if ( inputElement[i].id === "txt-firstname" ) {
+								document.getElementById(inputElement[i].id).nextElementSibling.innerHTML = firstnametext;
+							}
+						}
+					}
+					
+				}
+				//clear all inputs
+				document.getElementById('btn-clearall').onclick = function() {
+					if (confirm("Are you sure to clear all inputs?")) {
+						for (var i = 0;i < inputElement.length;i++) {
+							inputElement[i].value = "";
+						}
+						for (var i = 0;i < textareaElement.length;i++) {
+							textareaElement[i].value = "";
+						}
+					}
+				};
+				
+				function clear_all() {
+
+				}
+				
+				document.getElementById('lbl-dellsupport').onclick = function() {
+					window.open( 'http://www.dell.com/support/home/us/en/19/product-support/servicetag/' + document.getElementById('txt-servicetag').value );
+				};
+
+				document.getElementById('btn-previewlog').onclick = function() {
+					document.getElementById('txt-internal').value = internal_log();
+					document.getElementById('txt-public').value = public_log();
+					//console.log( internal_log() );
+				};
+				
+				function generate_log_from_input(elem, txt1, txt2) {
+					txt2 = txt2 || "";
+					if (document.getElementById(elem)) {
+						var e = document.getElementById(elem);
+						return e.value ? txt1 + e.value + txt2 + "\n" : "";
+					} else {
+						console.log( "Error: Element '" + elem + "' is " + document.getElementById(elem) );
+						return '';
+					}
+				}
+				
+				function internal_log() {					
+					var maintext = "";
+					
+					maintext += generate_log_from_input("txt-firstname", "First Name: ");
+					maintext += generate_log_from_input("txt-servicetag", "Service Tag: ");
+					maintext += generate_log_from_input("txt-stamps", "Stamps: ");
+					maintext += generate_log_from_input("txt-heatcheckts", "HEATCHECK STATUS BEFORE TS: ");
+					maintext += public_log();
+					maintext += generate_log_from_input("txt-answerflow", "\n");
+					
+					return maintext;
+				}
+							
+				function public_log() {
+					var maintext = "";
+					
+					maintext += generate_log_from_input("txt-issue", "CCI/ISSUE: **", "**");
+					maintext += generate_log_from_input("txt-troubleshooting", "\nTROUBLESHOOTING:\n");
+					maintext += generate_log_from_input("txt-resolution", "\nRESOLUTION: ");
+					maintext += generate_log_from_input("txt-vkprs", "\nVKPRS Portable Only: ");
+					maintext += generate_log_from_input("txt-canadahdd", "CANADA HDD DPS: ");
+					maintext += generate_log_from_input("txt-hdddataloss", "HDD Data Loss: ");
+					maintext += generate_log_from_input("txt-ppid", "PPID: ");
+					maintext += generate_log_from_input("txt-whatdamage", "\nWhat is the extent of the damage?\n-");
+					maintext += generate_log_from_input("txt-whenhowdamage", "When and how did the damage occur?\n-");
+					maintext += generate_log_from_input("txt-wheredamage", "Where was the system at the time of the incident?\n-");
+					maintext += generate_log_from_input("txt-adperyear", "1 AD per year: ");
+					maintext += generate_log_from_input("txt-alternatefirstname", "\nAPN: ");
+					maintext += generate_log_from_input("txt-alternatephonenumber", "ACP: ");
+					maintext += generate_log_from_input("txt-bttr", "BTTR & TIMEZONE: ");
+					maintext += generate_log_from_input("txt-cidar", "CIDAR Expectations: ");
+					maintext += generate_log_from_input("txt-frucru", "FRU to CRU DISCLAIMER: ");
+					maintext += generate_log_from_input("txt-crufru", "CRU to FRU DISCLAIMER: ");
+					maintext += generate_log_from_input("txt-oracleslnid", "\nORACLE SLN ID: ");
+					maintext += generate_log_from_input("txt-diagnostics", "DIAGNOSTICS: ");
+					maintext += generate_log_from_input("txt-diagresults", "RESULTS: ");
+					maintext += generate_log_from_input("txt-validation", "VALIDATION: ");
+					maintext += generate_log_from_input("txt-reasonnotrun", "REASON if not RUN: ");
+					maintext += generate_log_from_input("txt-l2approver", "L2 Approved Dispatch: ");
+					maintext += generate_log_from_input("txt-callduration", "Call Duration: ");
+					maintext += generate_log_from_input("txt-heatcheckrating", "\nHeat Check Rating: ");
+					maintext += generate_log_from_input("txt-heatcheckreason", "Heat Check Reason: ");
+					maintext += generate_log_from_input("txt-smartid", "Smart ID: ");
+					maintext += generate_log_from_input("txt-offereddepot", "Offered Depot: ");
+					
+					return maintext;
+				}
+			};
+		</script>	
+	<!--<![endif]-->		
+	</body>
+</html>
+
+<!--
+https://www.google.com/maps/place/19+Woodlawn+Ave,+Cranford,+NJ+07016
+ API key AIzaSyCMk_vhDEx2GNwEyoFP9kEn3l6Dxxhk8PY 
+	try {
+		window.clipboardData.setData('Text', document.getElementById(this.id).previousElementSibling.value );//copy previous input element
+	} catch (e) {
+		console.log(e.message);
+	}
+
+	document.getElementById('lbl-confirmation').classList.toggle("showcopy");
+	var myInterval = setInterval(copylbl, 1000);
+
+	function copylbl() {
+		document.getElementById('lbl-confirmation').classList.toggle("showcopy");
+		console.log('hi');
+		window.clearInterval(myInterval);
+	}
+	
+GET SERVICE TAG<br>
+Mr. /Mrs. (Customer), before we proceed can you provide me your Service Tag?<br><br>
+SERVICE TAG NOT AVAILABLE<br>
+Do you have any of the following: Order number, Customer Number or Express Service Code?<br><br>
+CONFIRM SERVICE TAG AND SYSTEM TYPE:<br>
+Can you confirm the system that you would like to have support with is a [SYSTEM TYPE] with Service Tag: [SVCTAG]?<br>
+I appreciate those information.		
+
+
+PHONE NUMBER<br>
+May I please have your Phone number?
+
+
+EMAIL ADDRESS<br>
+May I please have your Email Address?
+
+
+VDI, TAT, TOADE, GAVE SR, TARP
+
+
+Just to set your expectations, the troubleshooting for this type of issue will take approximately/estimate _____.  Do you have the time for us to do the troubleshooting?
+
+
+AGENT NOTE:<br>
+- Probe to isolate the issue<br>
+- Explain the POSSIBLE root cause of the problem<br>	
+
+
+AFTER HEATCHECK b4 TS<br>
+CUSTOMER SAID NO<br>
+No worries, here's what we will do, we can proceed with the logical troubleshooting that would help us isolate the issue with your system and to start with, may I know what are the troubleshooting you have already tried so far so we can skip them?<br><br>
+CUSTOMER IS A TECH<br>
+TELL ME MORE<br>
+To help me properly identify the problem, can you provide me further details about it so that I can accurately isolate the issue that you are having?<br>
+TRIED SO FAR<br>
+What are the troubleshooting steps you already made?<br>
+WHAT IS THE ERROR<br>
+What is the exact error message you received?<br><br>
+CUSTOMER SAID YES<br>
+Agent to follow: Answer Flow.
+Check the Solutions in AF and estimate how much time it would take to complete the steps		 
+-->

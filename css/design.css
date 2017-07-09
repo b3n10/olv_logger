@@ -1,0 +1,124 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font: 15px 'Calibri';
+}
+
+body {
+	background: #f2f2f2;
+}
+
+.cxinfots1 > .div-row,
+.cxinfots2 > .div-row {
+	position: relative;
+}
+
+.cxinfots1,
+.cxinfots2 {
+	min-width: 298px;
+}
+
+.buttons {
+	width: 99%;
+}
+
+/*initialize hide all except intro*/
+.username,
+/*.cxinfots1,
+.buttons,*/
+.internalpublic,
+.emailtemplateselection,
+.emailpreview,
+#google,
+#dellsupport {
+	display: none;
+}
+
+.div-main-container {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 600px;
+	margin: 20px auto;
+}
+
+.div-container {
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin: 0 auto;
+	background: #fff;	
+}
+
+.div-row {
+	border-bottom: 1px solid #ccc;
+	padding: 5px;
+	margin: 0 5px;
+	width: 98%;
+}
+.div-row:last-of-type {
+	border-bottom: none;
+}
+
+.div-row input,
+.div-row textarea {
+	border: none;
+	width: 100%;
+	outline: none;
+	resize: none;
+}
+
+#txt-troubleshooting {
+	height: 100px;
+}
+
+#txt-answerflow {
+	height: 25px;
+}
+
+.buttons button {
+	width: 24%;
+	padding: 3px;
+}
+
+span {
+	display: inline-block;
+	width: 400px;
+	position: absolute;
+	z-index: 1;
+	cursor: pointer;
+	background: #f2f2f2;
+	color: #000;
+	text-align: left;	
+	font-weight: bold;
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.span_topleft {
+	top: 30px;
+	left: 180px;
+}
+.span_topright {
+	top: 30px;
+	right: 180px;
+}
+.span_bottomleft {
+	bottom: 28px;
+	left: 180px;
+}
+.span_bottomright {
+	bottom: 28px;
+	right: 180px;
+}
+
+.div-row label {
+	visibility: hidden;
+	position: absolute;
+	top: 5px;
+	left: 200px;
+}
+
+.div-row input:hover + span + label, .div-row input:focus + span + label {
+	visibility: visible;
+}
