@@ -275,7 +275,7 @@
 					<textarea id="txt-internal"></textarea>
 					<span></span>
 					<label for="txt-internal">Internal Comments</label>
-					<button>copy internal</button>
+					<button id="btn-copyinternal">copy internal</button>
 				</div>
 			</div><!--end of internalpreview -->
 			<div class="div-container publicpreview">
@@ -283,7 +283,7 @@
 					<textarea id="txt-public"></textarea>
 					<span></span>
 					<label for="txt-public">Public Comments</label>
-					<button>copy public</button>
+					<button id="btn-copypublic">copy public</button>
 				</div>
 			</div><!--end of publicpreview -->
 			<div class="div-container closepreviewlog">
@@ -449,6 +449,16 @@
 					document.getElementsByClassName('publicpreview')[0].style.display = "none";
 					document.getElementsByClassName('closepreviewlog')[0].style.display = "none";
 				};
+
+				document.getElementById('btn-copyinternal').onclick =function() {
+					try { window.clipboardData.setData('Text', document.getElementById('txt-internal').value ); }
+					catch (e) { console.log(e.message) }
+				};
+
+				document.getElementById('btn-copypublic').onclick =function() {
+					try { window.clipboardData.setData('Text', document.getElementById('txt-public').value ); }
+					catch (e) { console.log(e.message) }					
+				};				
 
 				document.getElementById('btn-previewlog').onclick = function() {
 					document.getElementsByClassName('cxinfots1')[0].style.display = "none";
