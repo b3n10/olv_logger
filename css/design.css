@@ -9,6 +9,29 @@ body {
 	background: #f2f2f2;
 }
 
+.div-main-container {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 600px;
+	margin: 20px auto;
+}
+
+.div-container {
+	border: 1px solid #ccc;
+	margin: 0 auto;
+	background: #fff;	
+}
+
+.div-row {
+	border-bottom: 1px solid #ccc;
+	padding: 5px;
+	margin: 0 5px;
+	width: 98%;
+}
+.div-row:last-of-type {
+	border-bottom: none;
+}
+
 .cxinfots1 > .div-row,
 .cxinfots2 > .div-row {
 	position: relative;
@@ -17,6 +40,16 @@ body {
 .cxinfots1,
 .cxinfots2 {
 	min-width: 298px;
+}
+
+.cxinfots1 {
+	border-bottom-left-radius: 5px; 
+	border-top-left-radius: 5px; 
+}
+
+.cxinfots2 {
+	border-bottom-right-radius: 5px; 
+	border-top-right-radius: 5px; 
 }
 
 .buttons {
@@ -33,30 +66,6 @@ body {
 #google,
 #dellsupport {
 	display: none;
-}
-
-.div-main-container {
-	display: flex;
-	flex-wrap: wrap;
-	max-width: 600px;
-	margin: 20px auto;
-}
-
-.div-container {
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	margin: 0 auto;
-	background: #fff;	
-}
-
-.div-row {
-	border-bottom: 1px solid #ccc;
-	padding: 5px;
-	margin: 0 5px;
-	width: 98%;
-}
-.div-row:last-of-type {
-	border-bottom: none;
 }
 
 .div-row input,
@@ -110,15 +119,4 @@ span {
 .span_bottomright {
 	bottom: 28px;
 	right: 180px;
-}
-
-.div-row label {
-	visibility: hidden;
-	position: absolute;
-	top: 5px;
-	left: 200px;
-}
-
-.div-row input:hover + span + label, .div-row input:focus + span + label {
-	visibility: visible;
 }

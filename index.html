@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- force IE edge -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="css/design.css">
 		<link rel="stylesheet" href="css/animation.css">
 		<title>OLV - Logger (unofficial)</title>
@@ -15,27 +16,31 @@
 		<div class="div-container username">
 			<h1>
 				<script>
-				try {
-					var WinNetwork = new ActiveXObject("WScript.Network");
-					var agent_ntlogin = {
-						'flle0695' : 'Francis_Ben_Lleve',
-						'pdel9895' : 'Philip_Dela_Cruz',
-					};
-					
-					var greeting = [ "Hi there", "What's up", "How's it going", "Annyeonghaseyo", "Maayong adlaw sa imo", "Ni hao", "Konichiwa" ];
-					
-					function getRandomInt(min, max) {
-						min = Math.ceil(min);
-						max = Math.floor(max);
-						return Math.floor(Math.random() * (max - min)) + min;
-						//code copied from mdn
+					function getmyname() {
+						try {
+							var WinNetwork = new ActiveXObject("WScript.Network");
+							var agent_ntlogin = {
+								'flle0695' : 'Francis_Ben_Lleve',
+								'pdel9895' : 'Philip_Dela_Cruz',
+							};
+							
+							var greeting = [ "Hi there", "What's up", "How's it going", "Annyeonghaseyo", "Maayong adlaw sa imo", "Ni hao", "Konichiwa" ];
+							
+							function getRandomInt(min, max) {
+								min = Math.ceil(min);
+								max = Math.floor(max);
+								return Math.floor(Math.random() * (max - min)) + min;
+								//code copied from mdn
+							}
+							
+							return greeting[ getRandomInt(0, greeting.length) ] + ",<br>" + agent_ntlogin[WinNetwork.UserName].slice(0, agent_ntlogin[WinNetwork.UserName].indexOf('_')) + "!";
+						} catch (e) {
+							console.log(e.message);
+							return "\"Error--inform bEn!\"";
+						}						
 					}
-					
-					document.write(greeting[ getRandomInt(0, greeting.length) ] + ",<br>" + agent_ntlogin[WinNetwork.UserName].slice(0, agent_ntlogin[WinNetwork.UserName].indexOf('_')) + "!");
-				} catch (e) {
-					document.write("Error. Pls inform bEn!");
-					console.log(e.message);
-				}
+
+					document.write( getmyname() );
 				</script>
 			</h1>
 			<button id="btn-continue">continue</button>
@@ -43,81 +48,103 @@
 		<div class="div-main-container">
 			<div class="div-container cxinfots1">
 				<div class="div-row">
+					<input type="text" id="txt-issue" placeholder="issue">
+					<span class="span_topleft"></span>
+					<label>issue</label>
+				</div>
+				<div class="div-row">
 					<input type="text" id="txt-firstname" placeholder="first name">
 					<span class="span_topleft"></span>
 					<label>first name</label>
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-lastname" placeholder="last name">
+					<span class="span_topleft"></span>
+					<label>last name</label>					
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-servicetag" placeholder="service tag">
-					<span class="span_topleft">			
-					</span>
+					<span class="span_topleft"></span>
+					<label>service tag</label>
 				</div>
 				<div id="dellsupport" class="div-row">
 					<a href="#" id="lbl-dellsupport">check tag on dell support</a>
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-phonenumber" placeholder="phone number">
-					<span class="span_topleft">
-					</span>
+					<span class="span_topleft"></span>
+					<label>phone number</label>
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-emailaddress" placeholder="email address">
-					<span class="span_topleft">
+					<span class="span_topleft"></span>
+					<label>email add</label>
 					</span>					
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-stamps" placeholder="stamps">
-					<span class="span_topleft">
-					</span>
+					<span class="span_topleft"></span>
+					<label>stamps</label>
 				</div>			
 				<div class="div-row">
 					<input type="text" id="txt-heatcheckts" placeholder="heatcheck b4 ts">
-					<span class="span_topleft">
-					</span>
-				</div>			
-				<div class="div-row">
-					<input type="text" id="txt-issue" placeholder="issue">
-					<span class="span_topleft">
-					</span>
+					<span class="span_topleft"></span>
+					<label>heatcheck b4 ts</label>
 				</div>
 				<div class="div-row">
 					<textarea id="txt-troubleshooting" placeholder="troubleshooting"></textarea>
-					<span class="span_topleft">				
-					</span>					
+					<span class="span_topleft"></span>
+					<label>troubleshooting</label>
 				</div>
 				<div class="div-row">
 					<textarea id="txt-answerflow" placeholder="**paste answerflow here**"></textarea>
+					<span class="span_topleft">answerflow</span>
+					<label>answerflow</label>
 				</div>			
 				<div class="div-row">
 					<input type="text" id="txt-resolution" placeholder="resolution">
 					<span class="span_bottomleft"></span>
+					<label>resolution</label>
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-alternatefirstname" placeholder="alt first name">
+					<span class="span_bottomleft"></span>
+					<label>alt first name</label>
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-alternatelastname" placeholder="alt last name">
+					<span class="span_bottomleft"></span>
+					<label>alt last name</label>					
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-alternatephonenumber" placeholder="alt phone #">
+					<span class="span_bottomleft"></span>
+					<label>alt phone #</label>					
 				</div>			
 				<div class="div-row">
 					<input type="text" id="txt-physicaladdress1" placeholder="street address">
+					<span class="span_bottomleft"></span>
+					<label>stree address</label>					
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-physicaladdress2" placeholder="po box / building number">
+					<span class="span_bottomleft"></span>
+					<label>pobox/bldg</label>					
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-city" placeholder="city">
+					<span class="span_bottomleft"></span>
+					<label>city</label>					
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-state" placeholder="state">
+					<span class="span_bottomleft"></span>
+					<label>state</label>					
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-zip" placeholder="zip">
+					<span class="span_bottomleft"></span>
+					<label>zip</label>					
 				</div>
 				<div id="google" class="div-row">
 					<a href="#" id="a-google">check address in google</a>
@@ -127,12 +154,17 @@
 				<div class="div-row">
 					<input type="text" id="txt-vkprs" placeholder="vkprs (portable only)">
 					<span class="span_topright"></span>
+					<label>vkprs</label>
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-canadahdd" placeholder="canada hdd dps">
+					<span class="span_topright"></span>
+					<label>canada hdd</label>					
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-hdddataloss" placeholder="hdd data loss">
+					<span class="span_topright"></span>
+					<label>hdd data loss</label>					
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-ppid" placeholder="ppid">
@@ -246,12 +278,15 @@
 				var span = document.getElementsByTagName('span');
 				var inputElement = document.getElementsByTagName('input');
 				var textareaElement = document.getElementsByTagName('textarea');				
-				
-				var firstnametext = "OPENING SCRIPT<br>" +
-					"Welcome to Dell Basic Warranty Support. My name is _____. How may I help you today?<br><br>" +
+
+				var script_issue = "OPENING SCRIPT<br>" +
+					"Welcome to Dell Basic Warranty Support. My name is " +
+					 getmyname() +
+					". How may I help you today?<br><br>" +
 					"ISSUE RESTATEMENT<br>" +
-					"I understand that your issue or concern is about [ISSUE]... Is that correct?<br><br>" +
-					"ACCOUNTABILITY<br>" +
+					"I understand that your issue or concern is about [ISSUE]... Is that correct?<br><br>";
+
+				var script_firstname = "ACCOUNTABILITY<br>" +
 					"I'll be more than happy to help you with that issue/concern. Before we proceed, I will ask questions that will help us update your record.<br><br>" +
 					"GATHER NAME<br>" +
 					"To begin with, may I have your First and Last Name please?";
@@ -263,23 +298,6 @@
 						}, false);
 					}
 				}
-				
-				document.getElementById('txt-servicetag').onkeyup = function () {
-					if (this.value.length >= 7 && this.value !== "service tag") { document.getElementById('dellsupport').style.display = "block"; }
-					else { document.getElementById('dellsupport').style.display = "none"; }
-					console.log(this.value.length);
-				};
-				
-				document.getElementById('txt-zip').onkeyup = function () {
-					if ( document.getElementById('txt-physicaladdress1').value !== "" && document.getElementById('txt-city').value !== "" && document.getElementById('txt-state').value !== "" && document.getElementById('txt-zip').value !== "" ) {
-						document.getElementById('google').style.display = "block";
-						document.getElementById('google').onclick = function () {
-							window.open( 'https://www.google.com/search?q=' + document.getElementById('txt-physicaladdress1').value + '+' + document.getElementById('txt-physicaladdress2').value + '+' + document.getElementById('txt-city').value + '+' + document.getElementById('txt-state').value + '+' + document.getElementById('txt-zip').value );
-						}
-					} else {
-						document.getElementById('google').style.display = "none";
-					}
-				};
 				
 				for (var i = 0;i < inputElement.length;i++) {
 					document.getElementById(inputElement[i].id).onkeydown = function() {
@@ -293,13 +311,43 @@
 
 					if ( document.getElementById(inputElement[i].id).nextElementSibling ) {
 						if ( document.getElementById(inputElement[i].id).nextElementSibling.nodeName === "SPAN" ) {
-							if ( inputElement[i].id === "txt-firstname" ) {
-								document.getElementById(inputElement[i].id).nextElementSibling.innerHTML = firstnametext;
-							}
+							if ( inputElement[i].id === "txt-firstname" ) { document.getElementById(inputElement[i].id).nextElementSibling.innerHTML = script_firstname; }
+							if ( inputElement[i].id === "txt-issue" ) { document.getElementById(inputElement[i].id).nextElementSibling.innerHTML = script_issue; }
 						}
 					}
-					
+				
+					if (inputElement[i].id === "txt-servicetag") {
+						document.getElementById('txt-servicetag').onkeyup = function () {
+							if (this.value.length >= 7 && this.value !== "service tag") { document.getElementById('dellsupport').style.display = "block"; }
+							else { document.getElementById('dellsupport').style.display = "none"; }
+							console.log(this.value.length);
+						};
+					} else if (inputElement[i].id === "txt-zip") {
+						document.getElementById('txt-zip').onkeyup = function () {
+							if ( document.getElementById('txt-physicaladdress1').value !== "" && document.getElementById('txt-city').value !== "" && document.getElementById('txt-state').value !== "" && document.getElementById('txt-zip').value !== "" ) {
+								document.getElementById('google').style.display = "block";
+								document.getElementById('google').onclick = function () {
+									window.open( 'https://www.google.com/search?q=' + document.getElementById('txt-physicaladdress1').value + '+' + document.getElementById('txt-physicaladdress2').value + '+' + document.getElementById('txt-city').value + '+' + document.getElementById('txt-state').value + '+' + document.getElementById('txt-zip').value );
+								}
+							} else {
+								document.getElementById('google').style.display = "none";
+							}
+						};
+					}
+
 				}
+
+				for (var i = 0;i < textareaElement.length;i++) {
+					document.getElementById(textareaElement[i].id).onkeydown = function() {
+						var nxt = document.getElementById(this.id).nextElementSibling.nextElementSibling;
+						if (this.value.length <= 14) {
+							nxt.style.visibility = 'visible';
+						} else {
+							nxt.style.visibility = 'hidden';
+						}
+					};
+				}
+
 				//clear all inputs
 				document.getElementById('btn-clearall').onclick = function() {
 					if (confirm("Are you sure to clear all inputs?")) {
