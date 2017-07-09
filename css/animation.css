@@ -7,7 +7,7 @@ https://stackoverflow.com/questions/38772442/css-transition-from-display-none-to
 input:focus + span {
 	visibility: visible;
 	opacity: 1;
-	transition: opacity 300ms 1.5s, visibility 300ms 1.5s;
+	transition: opacity 300ms 1s, visibility 300ms 1s;
 }
 span {
 	opacity: 0;

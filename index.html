@@ -36,7 +36,7 @@
 							return greeting[ getRandomInt(0, greeting.length) ] + ",<br>" + agent_ntlogin[WinNetwork.UserName].slice(0, agent_ntlogin[WinNetwork.UserName].indexOf('_')) + "!";
 						} catch (e) {
 							console.log(e.message);
-							return "\"Error--inform bEn!\"";
+							return "______";
 						}						
 					}
 
@@ -124,7 +124,7 @@
 				<div class="div-row">
 					<input type="text" id="txt-physicaladdress1" placeholder="street address">
 					<span class="span_bottomleft"></span>
-					<label>stree address</label>					
+					<label>street address</label>					
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-physicaladdress2" placeholder="po box / building number">
@@ -168,64 +168,98 @@
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-ppid" placeholder="ppid">
+					<span class="span_topright"></span>
+					<label>ppid</label>										
 				</div>
 				<div class="div-row">
-					<input type="text" id="txt-whatdamage" placeholder="what is the extent of damage">
+					<input type="text" id="txt-whatdamage" placeholder="WHAT [damage]">
+					<span class="span_topright"></span>
+					<label>WHAT</label>										
 				</div>
 				<div class="div-row">
-					<input type="text" id="txt-whenhowdamage" placeholder="when &amp; how did the damage occur">
+					<input type="text" id="txt-whenhowdamage" placeholder="WHEN &amp; HOW [damage]">
+					<span class="span_topright"></span>
+					<label>WHEN &amp; HOW</label>										
 				</div>
 				<div class="div-row">
-					<input type="text" id="txt-wheredamage" placeholder="where was the system at time of incident">
+					<input type="text" id="txt-wheredamage" placeholder="WHERE [damage]">
+					<span class="span_topright"></span>
+					<label>WHERE</label>										
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-adperyear" placeholder="one AD per year">
+					<span class="span_topright"></span>
+					<label>1 AD per yr</label>										 					
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-bttr" placeholder="bttr &amp; timezone">
+					<span class="span_topright"></span>
+					<label>bttr &amp; tz</label>															
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-cidar" placeholder="cidar expectations">
+					<span class="span_topright"></span>
+					<label>cidar</label>															
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-frucru" placeholder="fru to cru disclaimer">
+					<span class="span_topright"></span>
+					<label>fru2cru</label>															
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-crufru" placeholder="cru to fru disclaimer">
+					<span class="span_topright"></span>
+					<label>cru2fru</label>															
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-oracleslnid" placeholder="oracle sln id">
 					<span class="span_bottomright"></span>
+					<label>SLNxxxx</label>															
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-diagnostics" placeholder="diagnostics">
+					<span class="span_bottomright"></span>
+					<label>diags</label>															
 				</div>
 				<div class="div-row">
-					<input type="text" id="txt-diagresults" placeholder="diag resultsvalidation">
-				</div>
-				<div class="div-row">
-					<input type="text" id="txt-validation" placeholder="validation">
+					<input type="text" id="txt-diagresults" placeholder="results &amp; validation">
+					<span class="span_bottomright"></span>
+					<label>results &amp; validation</label>									
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-reasonnotrun" placeholder="reason if not run">
+					<span class="span_bottomright"></span>
+					<label>reason if not run</label>									
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-l2approver" placeholder="L2 approver">
+					<span class="span_bottomright"></span>
+					<label>L2 approver</label>									
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-callduration" placeholder="call duration">
+					<span class="span_bottomright"></span>
+					<label>call duration</label>									
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-heatcheckrating" placeholder="heat check rating">
+					<span class="span_bottomright"></span>
+					<label>heatcheck rating</label>									
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-heatcheckreason" placeholder="heat check reason">
+					<span class="span_bottomright"></span>
+					<label>heatcheck reason</label>									
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-smartid" placeholder="smart id method">
+					<span class="span_bottomright"></span>
+					<label>smartid method</label>									
 				</div>
 				<div class="div-row">
 					<input type="text" id="txt-offereddepot" placeholder="offered depot">
+					<span class="span_bottomright"></span>
+					<label>offered depot</label>									
 				</div>
 			</div>
 			<div class="div-container buttons">
@@ -279,17 +313,49 @@
 				var inputElement = document.getElementsByTagName('input');
 				var textareaElement = document.getElementsByTagName('textarea');				
 
+				/* begin scripts for newbies */
+
 				var script_issue = "OPENING SCRIPT<br>" +
 					"Welcome to Dell Basic Warranty Support. My name is " +
 					 getmyname() +
 					". How may I help you today?<br><br>" +
 					"ISSUE RESTATEMENT<br>" +
-					"I understand that your issue or concern is about [ISSUE]... Is that correct?<br><br>";
+					"I understand that your issue or concern is about [ISSUE]... Is that correct?<br><br>" +
+					"AGENT NOTE:<br>" +
+					"- Probe to isolate the issue<br>" +
+					"- Explain the POSSIBLE root cause of the problem<br>";
 
-				var script_firstname = "ACCOUNTABILITY<br>" +
-					"I'll be more than happy to help you with that issue/concern. Before we proceed, I will ask questions that will help us update your record.<br><br>" +
-					"GATHER NAME<br>" +
+				var script_firstname = "ACCOUNTABILITY:<br>" +
+					"I'll be more than happy to help you with that issue/concern.<br><br>" + 
+					"IF CREATE or UPDATE SR:<br>" +
+					"Before we proceed, I will ask questions that will help us update your record.<br><br>" +
 					"To begin with, may I have your First and Last Name please?";
+
+				var script_servicetag = "GET SERVICE TAG<br>" +
+					"Mr. /Mrs. (Customer), before we proceed can you provide me your Service Tag?<br><br>" +
+					"SERVICE TAG NOT AVAILABLE<br>" +
+					"Do you have any of the following: Order number, Customer Number or Express Service Code?<br><br>" +
+					"CONFIRM SERVICE TAG AND SYSTEM TYPE:<br>" +
+					"Can you confirm the system that you would like to have support with is a [SYSTEM TYPE] with Service Tag: [SVCTAG]?<br><br>" +
+					"I appreciate those information.";
+
+				var script_phonenumber = "PHONE NUMBER<br>" +
+					"May I have your Phone Number please?";
+
+				var script_emailaddress = "EMAIL ADDRESS<br>" +
+					"May I have your Email Address please?";
+
+				var script_stamps = "VDI, TAT, TOADE, GAVE SR, TARP";
+				
+				var script_heatcheckts = "Just to set your expectations, the troubleshooting for this type of issue will take approximately/estimate _____.  Do you have the time for us to do the troubleshooting?<br><br>" +
+					"IF CUSTOMER SAID NO<br>" +
+					"No worries, here's what we will do, we can proceed with the logical troubleshooting that would help us isolate the issue with your system and to start with, may I know what are the troubleshooting you have already tried so far so we can skip them?<br><br>" +
+					"IF CUSTOMER IS A TECH<br>" +
+					"To help me properly identify the problem, can you provide me further details about it so that I can accurately isolate the issue that you are having?<br><br>" +
+					"IF THERE IS ERROR<br>" +
+					"What is the exact error message you received?";
+
+				/* end scripts for newbies */
 				
 				for (var x = 0; x < span.length;x++) {
 					if (span[x].id === "span-dellsupport") {					
@@ -311,8 +377,13 @@
 
 					if ( document.getElementById(inputElement[i].id).nextElementSibling ) {
 						if ( document.getElementById(inputElement[i].id).nextElementSibling.nodeName === "SPAN" ) {
-							if ( inputElement[i].id === "txt-firstname" ) { document.getElementById(inputElement[i].id).nextElementSibling.innerHTML = script_firstname; }
 							if ( inputElement[i].id === "txt-issue" ) { document.getElementById(inputElement[i].id).nextElementSibling.innerHTML = script_issue; }
+							if ( inputElement[i].id === "txt-firstname" ) { document.getElementById(inputElement[i].id).nextElementSibling.innerHTML = script_firstname; }
+							if ( inputElement[i].id === "txt-servicetag" ) { document.getElementById(inputElement[i].id).nextElementSibling.innerHTML = script_servicetag; }
+							if ( inputElement[i].id === "txt-phonenumber" ) { document.getElementById(inputElement[i].id).nextElementSibling.innerHTML = script_phonenumber; }
+							if ( inputElement[i].id === "txt-emailaddress" ) { document.getElementById(inputElement[i].id).nextElementSibling.innerHTML = script_emailaddress; }
+							if ( inputElement[i].id === "txt-stamps" ) { document.getElementById(inputElement[i].id).nextElementSibling.innerHTML = script_stamps; }
+							if ( inputElement[i].id === "txt-heatcheckts" ) { document.getElementById(inputElement[i].id).nextElementSibling.innerHTML = script_heatcheckts; }
 						}
 					}
 				
@@ -326,9 +397,7 @@
 						document.getElementById('txt-zip').onkeyup = function () {
 							if ( document.getElementById('txt-physicaladdress1').value !== "" && document.getElementById('txt-city').value !== "" && document.getElementById('txt-state').value !== "" && document.getElementById('txt-zip').value !== "" ) {
 								document.getElementById('google').style.display = "block";
-								document.getElementById('google').onclick = function () {
-									window.open( 'https://www.google.com/search?q=' + document.getElementById('txt-physicaladdress1').value + '+' + document.getElementById('txt-physicaladdress2').value + '+' + document.getElementById('txt-city').value + '+' + document.getElementById('txt-state').value + '+' + document.getElementById('txt-zip').value );
-								}
+								document.getElementById('google').onclick = function () { window.open( 'https://www.google.com/search?q=' + document.getElementById('txt-physicaladdress1').value + '+' + document.getElementById('txt-physicaladdress2').value + '+' + document.getElementById('txt-city').value + '+' + document.getElementById('txt-state').value + '+' + document.getElementById('txt-zip').value ); }
 							} else {
 								document.getElementById('google').style.display = "none";
 							}
@@ -360,30 +429,13 @@
 					}
 				};
 				
-				function clear_all() {
-
-				}
-				
-				document.getElementById('lbl-dellsupport').onclick = function() {
-					window.open( 'http://www.dell.com/support/home/us/en/19/product-support/servicetag/' + document.getElementById('txt-servicetag').value );
-				};
+				document.getElementById('lbl-dellsupport').onclick = function() { window.open( 'http://www.dell.com/support/home/us/en/19/product-support/servicetag/' + document.getElementById('txt-servicetag').value ); };
 
 				document.getElementById('btn-previewlog').onclick = function() {
 					document.getElementById('txt-internal').value = internal_log();
 					document.getElementById('txt-public').value = public_log();
 					//console.log( internal_log() );
 				};
-				
-				function generate_log_from_input(elem, txt1, txt2) {
-					txt2 = txt2 || "";
-					if (document.getElementById(elem)) {
-						var e = document.getElementById(elem);
-						return e.value ? txt1 + e.value + txt2 + "\n" : "";
-					} else {
-						console.log( "Error: Element '" + elem + "' is " + document.getElementById(elem) );
-						return '';
-					}
-				}
 				
 				function internal_log() {					
 					var maintext = "";
@@ -432,6 +484,18 @@
 					
 					return maintext;
 				}
+
+				function generate_log_from_input(elem, txt1, txt2) {
+					txt2 = txt2 || ""; //default value
+					if (document.getElementById(elem)) {
+						var e = document.getElementById(elem);
+						return e.value ? txt1 + e.value + txt2 + "\n" : "";
+					} else {
+						console.log( "Error: Element '" + elem + "' is " + document.getElementById(elem) );
+						return '';
+					}
+				}
+
 			};
 		</script>	
 	<!--<![endif]-->		
@@ -456,13 +520,7 @@ https://www.google.com/maps/place/19+Woodlawn+Ave,+Cranford,+NJ+07016
 		window.clearInterval(myInterval);
 	}
 	
-GET SERVICE TAG<br>
-Mr. /Mrs. (Customer), before we proceed can you provide me your Service Tag?<br><br>
-SERVICE TAG NOT AVAILABLE<br>
-Do you have any of the following: Order number, Customer Number or Express Service Code?<br><br>
-CONFIRM SERVICE TAG AND SYSTEM TYPE:<br>
-Can you confirm the system that you would like to have support with is a [SYSTEM TYPE] with Service Tag: [SVCTAG]?<br>
-I appreciate those information.		
+
 
 
 PHONE NUMBER<br>
@@ -473,28 +531,10 @@ EMAIL ADDRESS<br>
 May I please have your Email Address?
 
 
-VDI, TAT, TOADE, GAVE SR, TARP
 
 
-Just to set your expectations, the troubleshooting for this type of issue will take approximately/estimate _____.  Do you have the time for us to do the troubleshooting?
 
 
-AGENT NOTE:<br>
-- Probe to isolate the issue<br>
-- Explain the POSSIBLE root cause of the problem<br>	
 
-
-AFTER HEATCHECK b4 TS<br>
-CUSTOMER SAID NO<br>
-No worries, here's what we will do, we can proceed with the logical troubleshooting that would help us isolate the issue with your system and to start with, may I know what are the troubleshooting you have already tried so far so we can skip them?<br><br>
-CUSTOMER IS A TECH<br>
-TELL ME MORE<br>
-To help me properly identify the problem, can you provide me further details about it so that I can accurately isolate the issue that you are having?<br>
-TRIED SO FAR<br>
-What are the troubleshooting steps you already made?<br>
-WHAT IS THE ERROR<br>
-What is the exact error message you received?<br><br>
-CUSTOMER SAID YES<br>
-Agent to follow: Answer Flow.
-Check the Solutions in AF and estimate how much time it would take to complete the steps		 
+ 
 -->
