@@ -26,7 +26,8 @@ span {
 	top: 5px;
 	right: 10px;
 	text-align: right;
-	opacity: 0;	
+	color: #a8a8a8;
+	opacity: 0;
 	visibility: hidden;	
 	transition: opacity 300ms 0s, visibility 300ms 0s;	
 }

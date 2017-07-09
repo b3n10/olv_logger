@@ -5,9 +5,7 @@
 	font: 15px 'Calibri';
 }
 
-body {
-	background: #f2f2f2;
-}
+body { background: #f2f2f2; }
 
 .div-main-container {
 	display: flex;
@@ -32,13 +30,30 @@ body {
 	border-bottom: none;
 }
 
+/*initialize hide all except intro*/
+.usernamecheck,
+/*.cxinfots1,
+.cxinfots2,
+.buttons,
+.previewwindow,*/
+.emailtemplateselection,
+.emailpreview,
+#google,
+#dellsupport {
+	display: none;
+}
+
 .cxinfots1 > .div-row,
-.cxinfots2 > .div-row {
+.cxinfots2 > .div-row,
+.internalpreview > .div-row,
+.publicpreview > .div-row {
 	position: relative;
 }
 
 .cxinfots1,
-.cxinfots2 {
+.cxinfots2,
+.internalpreview,
+.publicpreview {
 	min-width: 298px;
 }
 
@@ -46,26 +61,13 @@ body {
 	border-bottom-left-radius: 5px; 
 	border-top-left-radius: 5px; 
 }
-
 .cxinfots2 {
 	border-bottom-right-radius: 5px; 
 	border-top-right-radius: 5px; 
 }
 
-.buttons {
+.buttons, .closepreviewlog {
 	width: 99%;
-}
-
-/*initialize hide all except intro*/
-.username,
-/*.cxinfots1,
-.buttons,*/
-.internalpublic,
-.emailtemplateselection,
-.emailpreview,
-#google,
-#dellsupport {
-	display: none;
 }
 
 .div-row input,
@@ -119,4 +121,20 @@ span {
 .span_bottomright {
 	bottom: 28px;
 	right: 180px;
+}
+
+.internalpreview textarea,
+.publicpreview textarea {
+	height: 500px;
+}
+
+.internalpreview button,
+.publicpreview button {
+	display: block;
+	width: 100%;
+	padding: 3px;
+}
+
+.closepreviewlog a:last-of-type {
+	padding-left: 50%;
 }

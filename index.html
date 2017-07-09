@@ -10,42 +10,42 @@
 	</head>
 	<body>
 	<!--[if lt IE 9]>
-		<h1>Your browser is not supported. Please update to IE 11 and above.</h1>
+		<h1>Your browser is not supported. Please update to IE 11 or above.</h1>
 	<![endif]-->
 	<!--[if gt IE 8]>-->	
-		<div class="div-container username">
-			<h1>
-				<script>
-					function getmyname() {
-						try {
-							var WinNetwork = new ActiveXObject("WScript.Network");
-							var agent_ntlogin = {
-								'flle0695' : 'Francis_Ben_Lleve',
-								'pdel9895' : 'Philip_Dela_Cruz',
-							};
-							
-							var greeting = [ "Hi there", "What's up", "How's it going", "Annyeonghaseyo", "Maayong adlaw sa imo", "Ni hao", "Konichiwa" ];
-							
-							function getRandomInt(min, max) {
-								min = Math.ceil(min);
-								max = Math.floor(max);
-								return Math.floor(Math.random() * (max - min)) + min;
-								//code copied from mdn
-							}
-							
-							return greeting[ getRandomInt(0, greeting.length) ] + ",<br>" + agent_ntlogin[WinNetwork.UserName].slice(0, agent_ntlogin[WinNetwork.UserName].indexOf('_')) + "!";
-						} catch (e) {
-							console.log(e.message);
-							return "______";
-						}						
-					}
-
-					document.write( getmyname() );
-				</script>
-			</h1>
-			<button id="btn-continue">continue</button>
-		</div>
 		<div class="div-main-container">
+			<div class="div-container usernamecheck">
+				<h1>
+					<script>
+						function getmyname() {
+							try {
+								var WinNetwork = new ActiveXObject("WScript.Network");
+								var agent_ntlogin = {
+									'flle0695' : 'Francis_Ben_Lleve',
+									'pdel9895' : 'Philip_Dela_Cruz',
+								};
+								
+								var greeting = [ "Hi there", "What's up", "How's it going", "Annyeonghaseyo", "Maayong adlaw sa imo", "Ni hao", "Konichiwa" ];
+								
+								function getRandomInt(min, max) {
+									min = Math.ceil(min);
+									max = Math.floor(max);
+									return Math.floor(Math.random() * (max - min)) + min;
+									//code copied from mdn
+								}
+								
+								return greeting[ getRandomInt(0, greeting.length) ] + ",<br>" + agent_ntlogin[WinNetwork.UserName].slice(0, agent_ntlogin[WinNetwork.UserName].indexOf('_')) + "!";
+							} catch (e) {
+								console.log(e.message);
+								return "______";
+							}						
+						}
+
+						document.write( getmyname() );
+					</script>
+				</h1>
+				<button id="btn-continue">continue</button>
+			</div><!--end of usernamecheck -->
 			<div class="div-container cxinfots1">
 				<div class="div-row">
 					<input type="text" id="txt-issue" placeholder="issue">
@@ -149,7 +149,7 @@
 				<div id="google" class="div-row">
 					<a href="#" id="a-google">check address in google</a>
 				</div>
-			</div>
+			</div><!--end of cxinfots1 -->
 			<div class="div-container cxinfots2">
 				<div class="div-row">
 					<input type="text" id="txt-vkprs" placeholder="vkprs (portable only)">
@@ -261,7 +261,7 @@
 					<span class="span_bottomright"></span>
 					<label>offered depot</label>									
 				</div>
-			</div>
+			</div><!--end of cxinfots2 -->
 			<div class="div-container buttons">
 				<div class="div-row">
 					<button id="btn-previewlog">preview log</button>
@@ -269,19 +269,29 @@
 					<button id="btn-scripts">scripts</button>
 					<button id="btn-clearall">clear all</button>					
 				</div>
-			</div>
-			<div class="div-container internalpublic">
+			</div><!--end of buttons -->
+			<div class="div-container internalpreview">
 				<div class="div-row">
-					<label>internal notes</label>
 					<textarea id="txt-internal"></textarea>
-					<button id="btn-copy">copy internal</button>
+					<span></span>
+					<label for="txt-internal">Internal Comments</label>
+					<button>copy internal</button>
 				</div>
+			</div><!--end of internalpreview -->
+			<div class="div-container publicpreview">
 				<div class="div-row">
-					<label>public notes</label>
 					<textarea id="txt-public"></textarea>
-					<button id="btn-public">copy public</button>
+					<span></span>
+					<label for="txt-public">Public Comments</label>
+					<button>copy public</button>
 				</div>
-			</div>
+			</div><!--end of publicpreview -->
+			<div class="div-container closepreviewlog">
+				<div class="div-row">
+					<a href="#" id="a-backtologger">&lt;&lt;back to logger</a>
+					<a href="#">go to email preview&gt;&gt;</a>
+				</div>
+			</div>			
 			<div class="div-container emailtemplateselection">
 				<div class="div-row">
 					<h2>choose template below</h2>
@@ -292,7 +302,7 @@
 					<button id="btn-template2">template2</button>
 					<button id="btn-template3">template3</button>
 				</div>
-			</div>
+			</div><!--end of emailtemplateselection -->
 			<div class="div-container emailpreview">
 				<div class="div-row">
 					<button>back to templates</button>
@@ -305,7 +315,7 @@
 					<button id="btn-emailclear">Clear</button>
 					<button id="btn-emailclose">Close</button>				
 				</div>
-			</div>
+			</div><!--end of emailpreview -->
 		</div><!-- end of div-main-container -->
 		<script type="text/javascript">
 			window.onload = function() {
@@ -428,13 +438,27 @@
 						}
 					}
 				};
-				
+		
 				document.getElementById('lbl-dellsupport').onclick = function() { window.open( 'http://www.dell.com/support/home/us/en/19/product-support/servicetag/' + document.getElementById('txt-servicetag').value ); };
 
+				document.getElementById('a-backtologger').onclick = function() {
+					document.getElementsByClassName('cxinfots1')[0].style.display = "block";
+					document.getElementsByClassName('cxinfots2')[0].style.display = "block";
+					document.getElementsByClassName('buttons')[0].style.display = "block";
+					document.getElementsByClassName('internalpreview')[0].style.display = "none";
+					document.getElementsByClassName('publicpreview')[0].style.display = "none";
+					document.getElementsByClassName('closepreviewlog')[0].style.display = "none";
+				};
+
 				document.getElementById('btn-previewlog').onclick = function() {
+					document.getElementsByClassName('cxinfots1')[0].style.display = "none";
+					document.getElementsByClassName('cxinfots2')[0].style.display = "none";
+					document.getElementsByClassName('buttons')[0].style.display = "none";
+					document.getElementsByClassName('internalpreview')[0].style.display = "block";
+					document.getElementsByClassName('publicpreview')[0].style.display = "block";
+					document.getElementsByClassName('closepreviewlog')[0].style.display = "block";
 					document.getElementById('txt-internal').value = internal_log();
 					document.getElementById('txt-public').value = public_log();
-					//console.log( internal_log() );
 				};
 				
 				function internal_log() {					
@@ -487,7 +511,9 @@
 
 				function generate_log_from_input(elem, txt1, txt2) {
 					txt2 = txt2 || ""; //default value
-					if (document.getElementById(elem)) {
+					if ( elem === "txt-alternatefirstname" && document.getElementById(elem).value !== "" || elem === "txt-alternatephonenumber" && document.getElementById(elem).value !== "" ) {
+						return txt1 + "UPDATED IN DELTA" + txt2 + "\n";
+					} else if (document.getElementById(elem)) {
 						var e = document.getElementById(elem);
 						return e.value ? txt1 + e.value + txt2 + "\n" : "";
 					} else {
