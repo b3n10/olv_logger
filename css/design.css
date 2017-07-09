@@ -32,10 +32,14 @@ body { background: #f2f2f2; }
 
 /*initialize hide all except intro*/
 .usernamecheck,
-/*.cxinfots1,
+/*
+.cxinfots1,
 .cxinfots2,
 .buttons,
-.previewwindow,*/
+*/
+.internalpreview,
+.publicpreview,
+.closepreviewlog,
 .emailtemplateselection,
 .emailpreview,
 #google,
@@ -57,17 +61,20 @@ body { background: #f2f2f2; }
 	min-width: 298px;
 }
 
-.cxinfots1 {
+.cxinfots1, .internalpreview {
 	border-bottom-left-radius: 5px; 
 	border-top-left-radius: 5px; 
 }
-.cxinfots2 {
+.cxinfots2, .publicpreview {
 	border-bottom-right-radius: 5px; 
 	border-top-right-radius: 5px; 
 }
 
-.buttons, .closepreviewlog {
+.buttons,
+.closepreviewlog {
 	width: 99%;
+	border-radius: 5px;
+	margin-top: 5px;
 }
 
 .div-row input,
@@ -133,6 +140,11 @@ span {
 	display: block;
 	width: 100%;
 	padding: 3px;
+}
+
+.publicpreview span {
+	display: inline;
+	width: 0;
 }
 
 .closepreviewlog a:last-of-type {
